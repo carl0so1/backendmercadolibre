@@ -45,12 +45,13 @@ npm start
 3. Crea un nuevo Web Service
 4. Configura las siguientes opciones:
    - **Build Command**: `npm install`
-   - **Start Command**: `npm start`
+   - **Start Command**: `node index.js`
 5. Añade las variables de entorno en la sección "Environment Variables":
    - `NODE_ENV`: production
+   - `PORT`: 3000
    - `MONGODB_URI`: tu_uri_de_mongodb_atlas
    - `JWT_SECRET`: tu_clave_secreta_para_jwt
-   - `PORT`: 10000 (Render asignará automáticamente un puerto)
+**Nota**: Se ha creado un archivo `index.js` en la raíz del proyecto que importa el archivo principal `src/index.js`. Esto es necesario para el correcto despliegue en Render.
 
 ## Endpoints API
 
