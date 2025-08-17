@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/user.js";
 import licenciaRouter from "./routes/licencia.js";
+import vehiculoRouter from "./routes/vehiculo.js";
 
 // Para producción, necesitamos manejar CORS
 const cors = function(req, res, next) {
@@ -37,11 +38,14 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Montar las rutas de usuario en '/api'
-app.use("/api", userRouter);
+// Montar las rutas de usuario en '/api/users'
+app.use("/api/users", userRouter);
 
 // Montar las rutas de licencia en '/api/licencias'
 app.use("/api/licencias", licenciaRouter);
+
+// Montar las rutas de vehículos en '/api/vehiculos'
+app.use("/api/vehiculos", vehiculoRouter);
 
 // Opciones mejoradas para la conexión a MongoDB
 const mongoOptions = {
